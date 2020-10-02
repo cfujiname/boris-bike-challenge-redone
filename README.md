@@ -135,6 +135,46 @@ I want a docking station to have a default capacity of 20 bikes.
 4. Refactor for a DEFAULT_CAPACITY instead of a hardcoded number 20.
 * in unit test and methods in Class
 
+## US 6
+As a system maintainer
+
+So that busy areas can be served more effectively
+
+I want to be able to specify a larger capacity when necessary
+* for this, initializing @capacity is necessary. 
+* then pass the @capacity variable to the methods.
+
+1. Unit test for capacity 'has default capacity', where subject.capacity should eq default capacity.
+2. Create @capacity = DEFAULT_CAPACITY in initialize, then insert into attr_reader.
+3. Modify full? method to accept @capacity.
+4. Refactor unit test where DEFAULT_CAPACITY is called.
+* because we need to be able to change capacity over time, we could initialize capacity to pass
+new values. 
+5. Unit test for initialization (has variable capacity and defaults capacity) of new initialized variable @capacity.
+
+## US 7, 8, 9
+
+As a member of the public
+
+So that I reduce the chance of getting a broken bike in future
+
+I'd like to _report_ a bike as _broken_ when I return it
+
+
+As a maintainer of the system
+
+So that I can manage broken bikes and not disappoint users
+
+I'd like docking stations _not to release_ _broken_ bikes
+
+
+As a maintainer of the system
+
+So that I can manage broken bikes and not disappoint users
+
+I'd like docking stations to _accept returning bikes (broken or not)_
+
+1. Unit test for report_broken
 
 
 

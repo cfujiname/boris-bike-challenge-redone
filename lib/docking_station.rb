@@ -2,11 +2,14 @@ require_relative 'bike' # so Docking station can grab Bike object
 
 class DockingStation
 
-  attr_reader :bike
   DEFAULT_CAPACITY = 20
+  attr_reader :bike, :capacity
+  attr_accessor :capacity
 
-  def initialize
+  def initialize(capacity = DEFAULT_CAPACITY)
+    @capacity = capacity
     @bikes = []
+    #@capacity = DEFAULT_CAPACITY
   end
 
   #def release_bike this gives infinite bikes at the moment
@@ -36,7 +39,7 @@ class DockingStation
   private
 
   def full?
-    @bikes.count >= DEFAULT_CAPACITY
+    @bikes.count >= @capacity
   end
 
   def empty?
