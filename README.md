@@ -91,8 +91,16 @@ As a member of the public
 So that I am not confused and charged unnecessarily
 
 I'd like docking stations not to release bikes when there are none available.
-* a method for not releasing bike must be implemented if there are no bikes availabe
+* a method for not releasing bike must be implemented if there are no bikes available.
+* raise an error and not release bike.
+* at the moment, our method def release_bike gives infinite bikes.
+* decision to be done: start DockingStation with bike or without bike?
 
+1. Refactor Unit test for release_bike, where we first dock a bike and then release it.
+2. Change method release_bike in Class to return instance variable @bike.
+3. Unit test for raise_error when no bikes are available inside of _release_bike_.
+4. Implement fail/unless in release_bike method in Class.
+5. Tests should pass.
 
 
 
