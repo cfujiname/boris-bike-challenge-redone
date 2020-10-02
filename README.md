@@ -128,6 +128,10 @@ I want a docking station to have a default capacity of 20 bikes.
 * for that, initialize a @bikes = [] - where bikes are stored.
 * @bikes.count >= 20, then raise that Docking station is full, otherwise carry on putting bikes in @bikes.
 * if @bikes.empty?, then raise that bikes are not available, otherwise take bike out of array (.pop).
+3. Implement SRP and separate methods as for now, both methods above have more than one responsibility.
+* for that, we can create a private section.
+* put full? and empty? methods inside private.
+* call these 2 methods in release_bike and dock(bike).
 
 
 
