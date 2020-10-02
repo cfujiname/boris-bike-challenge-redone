@@ -115,6 +115,20 @@ I'd like docking stations not to accept more bikes than their capacity
 4. Implement method to fail/if @bike
 5. All tests should pass.
 
+## US 6
+As a system maintainer
+
+So that I can plan the distribution of bikes
+
+I want a docking station to have a default capacity of 20 bikes.
+* manual feature test gives us RuntimeError Docking station is full when we try to add 20 bikes.
+
+1. Unit test refactor: #dock() expects to raise_error when 20 times Bike.new are put in it.
+2. Change methods to accept 20 bikes and only then raise error message. 
+* for that, initialize a @bikes = [] - where bikes are stored.
+* @bikes.count >= 20, then raise that Docking station is full, otherwise carry on putting bikes in @bikes.
+* if @bikes.empty?, then raise that bikes are not available, otherwise take bike out of array (.pop).
+
 
 
 
