@@ -22,8 +22,6 @@ I'd like a _docking station_ to _release a bike_
 
 --- Manual feature test helper for IRB---
 
-Fetch files:
-
 require './lib/docking_station'
 require './lib/bike'
 
@@ -101,6 +99,22 @@ I'd like docking stations not to release bikes when there are none available.
 3. Unit test for raise_error when no bikes are available inside of _release_bike_.
 4. Implement fail/unless in release_bike method in Class.
 5. Tests should pass.
+
+## US 6
+As a maintainer of the system
+
+So that I can control the distribution of bikes
+
+I'd like docking stations not to accept more bikes than their capacity
+* DockingStation does not accept bike when full.
+* assuming capacity is 1 bike per station
+
+1. Manual feature test to see what behaviour we are expecting.
+2. At the moment, DockingStation accepts infinite bikes.
+3. Unit test to raise_error when DockingStation is full.
+4. Implement method to fail/if @bike
+5. All tests should pass.
+
 
 
 
