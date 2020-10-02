@@ -5,9 +5,6 @@
 1. Create lib folder
 2. Run rspec --init
 
-
-
-
 #User stories
 * for global comprehension, read all user stories first, then start working on each.
 
@@ -89,6 +86,12 @@ not able to remember it -> creation of instance variables.
 4. Create instance variable @bike for DockingStation, implement attr_reader :bike
 
 ## US 5
+As a member of the public
+
+So that I am not confused and charged unnecessarily
+
+I'd like docking stations not to release bikes when there are none available.
+* a method for not releasing bike must be implemented if there are no bikes availabe
 
 
 
