@@ -132,6 +132,8 @@ I want a docking station to have a default capacity of 20 bikes.
 * for that, we can create a private section.
 * put full? and empty? methods inside private.
 * call these 2 methods in release_bike and dock(bike).
+4. Refactor for a DEFAULT_CAPACITY instead of a hardcoded number 20.
+* in unit test and methods in Class
 
 
 
