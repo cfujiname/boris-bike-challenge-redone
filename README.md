@@ -159,7 +159,8 @@ As a member of the public
 So that I reduce the chance of getting a broken bike in future
 
 I'd like to _report_ a bike as _broken_ when I return it
-
+* here, we need to think that it is the state of the bike
+* responsibility of Bike class enable report_broken
 
 As a maintainer of the system
 
@@ -174,7 +175,14 @@ So that I can manage broken bikes and not disappoint users
 
 I'd like docking stations to _accept returning bikes (broken or not)_
 
-1. Unit test for report_broken
+1. Unit test for report_broken using Rspec predicate matcher to define state of the bike.
+2. Run rspec, we find error: undefined method report_broken.
+3. Implement this method def report_broken with nothing inside, then run rspec again.
+4. Error: expected #<Bike:0x00007fbb84227c10> to respond to `broken?`
+5. So now we know that we need to implement the state broken? in our method.
+6. Start with implementing the broken? method. Inside the method, we insert @broken variable that 
+implicitly should be true or false.
+7. That means, in our method report_broken, we do @broken = true
 
 
 

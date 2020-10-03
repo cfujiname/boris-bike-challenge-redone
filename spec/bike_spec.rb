@@ -10,4 +10,12 @@ describe Bike do
     end
   end
 
+  describe '#report_broken' do
+    it 'can be reported broken' do
+      subject.report_broken
+      expect(subject).to be_broken
+      # here Rspec predicate matchers, expecting something to be in a state
+    end
+  end
+
 end
