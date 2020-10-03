@@ -71,6 +71,7 @@ As a member of the public
 So I can decide whether to use the docking station
 
 I want to see a bike that has been docked 
+
 * For this user story, DockingStation responsibilities would be 
 * remembering docked bikes and report docked bikes (store and access/read)
 
@@ -89,6 +90,7 @@ As a member of the public
 So that I am not confused and charged unnecessarily
 
 I'd like docking stations not to release bikes when there are none available.
+
 * a method for not releasing bike must be implemented if there are no bikes available.
 * raise an error and not release bike.
 * at the moment, our method def release_bike gives infinite bikes.
@@ -106,6 +108,7 @@ As a maintainer of the system
 So that I can control the distribution of bikes
 
 I'd like docking stations not to accept more bikes than their capacity
+
 * DockingStation does not accept bike when full.
 * assuming capacity is 1 bike per station
 
@@ -121,6 +124,7 @@ As a system maintainer
 So that I can plan the distribution of bikes
 
 I want a docking station to have a default capacity of 20 bikes.
+
 * manual feature test gives us RuntimeError Docking station is full when we try to add 20 bikes.
 
 1. Unit test refactor: #dock() expects to raise_error when 20 times Bike.new are put in it.
@@ -152,28 +156,16 @@ I want to be able to specify a larger capacity when necessary
 new values. 
 5. Unit test for initialization (has variable capacity and defaults capacity) of new initialized variable @capacity.
 
-## US 7, 8, 9
+## US 7
 
 As a member of the public
 
 So that I reduce the chance of getting a broken bike in future
 
 I'd like to _report_ a bike as _broken_ when I return it
+
 * here, we need to think that it is the state of the bike
 * responsibility of Bike class enable report_broken
-
-As a maintainer of the system
-
-So that I can manage broken bikes and not disappoint users
-
-I'd like docking stations _not to release_ _broken_ bikes
-
-
-As a maintainer of the system
-
-So that I can manage broken bikes and not disappoint users
-
-I'd like docking stations to _accept returning bikes (broken or not)_
 
 1. Unit test for report_broken using Rspec predicate matcher to define state of the bike.
 2. Run rspec, we find error: undefined method report_broken.
@@ -183,6 +175,25 @@ I'd like docking stations to _accept returning bikes (broken or not)_
 6. Start with implementing the broken? method. Inside the method, we insert @broken variable that 
 implicitly should be true or false.
 7. That means, in our method report_broken, we do @broken = true
+
+## US 8
+
+As a maintainer of the system
+
+So that I can manage broken bikes and not disappoint users
+
+I'd like docking stations _not to release_ _broken_ bikes
+
+* we need to stop DockingStation to release broken bikes as it is accepting broken bikes
+
+1. Unit test for raising error when trying to release broken bike
+
+As a maintainer of the system
+
+So that I can manage broken bikes and not disappoint users
+
+I'd like docking stations to _accept returning bikes (broken or not)_
+
 
 
 
